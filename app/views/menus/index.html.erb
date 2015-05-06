@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listido de Menú</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Código</th>
+      <th>Nombre de Menú</th>
+      <th>Tipo de Menú</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @menus.each do |menu| %>
+      <tr>
+        <td><%= menu.codigo %></td>
+        <td><%= menu.nombre_menu %></td>
+        <td><%= menu.tipo_menu %></td>
+        <td><%= link_to 'Visualizar', menu %></td>
+        <td><%= link_to 'Editar', edit_menu_path(menu) %></td>
+        <td><%= link_to 'Eliminar', menu, method: :delete, data: { confirm: 'Estas Seguro que deseas Eliminar?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Menu', new_menu_path %>

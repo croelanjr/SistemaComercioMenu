@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listado de Clientes</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Codigo dni</th>
+      <th>Nombre</th>
+      <th>Apellidos</th>
+      <th>Fecha Nacimiento</th>
+      <th>Dirección</th>
+      <th>Distrito</th>
+<!--      <th>Clave</th> -->
+      <th>Delivery</th>
+      <th>Telefono</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clientes.each do |cliente| %>
+      <tr>
+        <td><%= cliente.codigo_dni %></td>
+        <td><%= cliente.nombre %></td>
+        <td><%= cliente.apellido %></td>
+        <td><%= cliente.fecha_naci %></td>
+        <td><%= cliente.direccion %></td>
+        <td><%= cliente.distrito %></td>
+<!--    <td><%= cliente.clave %></td> -->
+        <td><%= cliente.delivery %></td>
+        <td><%= cliente.telefono %></td>
+        <td><%= link_to 'Visualizar', cliente %></td>
+        <td><%= link_to 'Editar', edit_cliente_path(cliente) %></td>
+        <td><%= link_to 'Eliminar', cliente, method: :delete, data: { confirm: 'Estas Seguro que desea Eliminar?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Nuevo Cliente', new_cliente_path %>
