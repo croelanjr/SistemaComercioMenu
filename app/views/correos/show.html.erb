@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @correo.nombre %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @correo.email %>
+</p>
+
+<p>
+  <strong>Asunto:</strong>
+  <%= @correo.asunto %>
+</p>
+
+<p>
+  <strong>Mensaje:</strong>
+  <%= @correo.mensaje %>
+</p>
+
+<%= link_to 'Edit', edit_correo_path(@correo) %> |
+<%= link_to 'Back', correos_path %>

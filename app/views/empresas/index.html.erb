@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Datos de la empresa</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Ruc</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @empresas.each do |empresa| %>
+      <tr>
+        <td><%= empresa.name %></td>
+        <td><%= empresa.ruc %></td>
+        <td><%= link_to 'Show', empresa %></td>
+        <td><%= link_to 'Edit', edit_empresa_path(empresa) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

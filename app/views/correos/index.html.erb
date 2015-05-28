@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Correos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Email</th>
+      <th>Asunto</th>
+      <th>Mensaje</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @correos.each do |correo| %>
+      <tr>
+        <td><%= correo.nombre %></td>
+        <td><%= correo.email %></td>
+        <td><%= correo.asunto %></td>
+        <td><%= correo.mensaje %></td>
+        <td><%= link_to 'Show', correo %></td>
+        <td><%= link_to 'Edit', edit_correo_path(correo) %></td>
+        <td><%= link_to 'Destroy', correo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Correo', new_correo_path %>

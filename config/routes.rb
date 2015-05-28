@@ -1,11 +1,37 @@
 Rails.application.routes.draw do
-  get 'admin/index'
 
-  get 'admin/clientes'
+  resources :correos
 
-  get 'admin/usuarios'
+  resources :empresas
 
-  get 'admin/menus'
+  #get 'home/index'
+  root 'home#index'
+  
+  get 'home/menus'
+
+  get 'home/promociones'
+
+  get 'home/locales'
+
+  #get 'home/contactenos', to: 'correos#new'
+
+  get 'home/contactenos'
+
+  post 'home/contactenos'
+
+  get 'home/about'
+  
+  get 'admin', to: 'admini#index' 
+
+  get 'admini/menus'
+
+  get 'admini/clientes'
+
+  get 'admini/administradores'
+
+  get 'admini/pedidos'
+
+  get 'admini/comidas_semanales'
 
   resources :clientes
 
@@ -19,7 +45,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   #root 'application#hello'
-  root 'admin#index'
+  #root 'admin#index'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

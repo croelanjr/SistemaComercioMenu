@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title><%= @empresa.name %></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+	<div clas="titulo">
+		<h1><%= @titulo %></h1>
+	</div>
+</head>
+<nav>
+    <ul class="nav nav-tabs">
+    <li data-toggle="tab"><%= link_to "Home", root_path %></li>
+    <li data-toggle="tab"><%= link_to "Menus", home_menus_path %></li>
+    <li data-toggle="tab"><%= link_to "Promociones", home_promociones_path %></li>
+    <li class="active" data-toggle="tab"><%= link_to "Locales", home_locales_path %></li>
+    <li data-toggle="tab"><%= link_to "Contactenos", home_contactenos_path %></li>
+    <li data-toggle="tab"><%= link_to "About", home_about_path %></li>
+    </ul>
+</nav>
+<body>
+	
+</body>
+</html>

@@ -1,0 +1,14 @@
+<%= simple_form_for(@correo) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :nombre %>
+    <%= f.input :email %>
+    <%= f.input :asunto %>
+    <%= f.input :mensaje %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,46 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+/* universal */
+
+h1 {
+	margin-top: auto;
+	/*background-color: #b0e0e6;*/
+	background-color: #4099FF;
+	position: center;
+}
+
+.titul {
+	text-align: center;
+	font-size: 200%;
+	font-weight: bold;
+	margin-top:20px;
+}
+.abou {
+	text-align: justify;
+	font-size: 150%;
+	margin-top: 20px;
+	margin-right: 120px;
+	margin-bottom: 10px;
+	margin-left: 120px;
+}
+
+#footer {
+	margin-top: 150px;
+	border-top: 1px solid #000;
+	font-size: 100%;
+	text-align: center;
+}
+
+.contacto {
+	margin-left: 200px;
+	font-size: 200%;
+	font-weight: bold;
+	margin-top:20px;
+}
+
+#cont {
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 200px;
+}
