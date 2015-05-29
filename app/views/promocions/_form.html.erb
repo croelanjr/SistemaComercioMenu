@@ -1,10 +1,10 @@
-<%= simple_form_for(@promocion), :html => {:multipart => true} do |f| %>
+<%= simple_form_for @promocion, :html => {:multipart => true} do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :nombre %>
     <%= f.input :descripcion %>
-    <%= f.file :imagen %>
+    <%= f.file_field :imagen %>
   </div>
 
   <div class="form-actions">
