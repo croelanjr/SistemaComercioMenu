@@ -6,14 +6,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title><%= @titulo %></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
-    <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag "application", :media => "all" %>
-    <%= favicon_link_tag 'apple-touch-icon-144x144-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '144x144' %>
-    <%= favicon_link_tag 'apple-touch-icon-114x114-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '114x114' %>
-    <%= favicon_link_tag 'apple-touch-icon-72x72-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png', :sizes => '72x72' %>
-    <%= favicon_link_tag 'apple-touch-icon-precomposed.png', :rel => 'apple-touch-icon-precomposed', :type => 'image/png' %>
-    <%= favicon_link_tag 'favicon.ico', :rel => 'shortcut icon' %>
-    <%= javascript_include_tag "application" %>
 	<div clas="titulo">
 		<h1><%= @empresa.name %></h1>
 	</div>
@@ -26,6 +18,9 @@
     <li data-toggle="tab"><%= link_to "Menus", menus_path %></li>
     <li data-toggle="tab"><%= link_to "Pedidos", home_contactenos_path %></li>
     <li data-toggle="tab"><%= link_to "Comidas Semanales", home_about_path %></li>
+    <li data-toggle="tab"><%= link_to "Empresas", empresas_path %></li>
+	<li data-toggle="tab"><%= link_to "Locales", locals_path %></li>
+	<li data-toggle="tab"><%= link_to "Promociones", promocions_path %></li>
     </ul>
 </nav>
 <body>

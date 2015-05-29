@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :promocions
+
+  resources :locals
+
   resources :correos
 
   resources :empresas
@@ -25,13 +29,15 @@ Rails.application.routes.draw do
 
   get 'admini/menus'
 
-  get 'admini/clientes'
+  get 'admini/clientes', to: 'clientes#index'
 
-  get 'admini/administradores'
+  get 'admini/administradores', to: 'usuarios#index'
 
   get 'admini/pedidos'
 
   get 'admini/comidas_semanales'
+
+  get 'admini/locales', to: 'locals#index'
 
   resources :clientes
 

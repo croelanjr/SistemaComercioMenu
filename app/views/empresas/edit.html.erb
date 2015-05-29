@@ -1,6 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= @titulo %></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+  <div clas="titulo">
+    <h1><%= @empresa.name %></h1>
+  </div>
+</head>
+<nav>
+    <ul class="nav nav-tabs">
+    <li data-toggle="tab"><%= link_to "Home", admin_path %></li>
+    <li data-toggle="tab"><%= link_to "Administradores", usuarios_path %></li>
+    <li data-toggle="tab"><%= link_to "Clientes", clientes_path %></li>
+    <li data-toggle="tab"><%= link_to "Menus", menus_path %></li>
+    <li data-toggle="tab"><%= link_to "Pedidos", home_contactenos_path %></li>
+    <li data-toggle="tab"><%= link_to "Comidas Semanales", home_about_path %></li>
+    <li class="active" data-toggle="tab"><%= link_to "Empresas", empresas_path %></li>
+    <li data-toggle="tab"><%= link_to "Locales", locals_path %></li>
+    <li data-toggle="tab"><%= link_to "Promociones", promocions_path %></li>
+    </ul>
+</nav>
+<body>
 <h1>Editing Empresa</h1>
 
 <%= render 'form' %>
 
 <%= link_to 'Show', @empresa %> |
 <%= link_to 'Back', empresas_path %>
+</body>
+</html>

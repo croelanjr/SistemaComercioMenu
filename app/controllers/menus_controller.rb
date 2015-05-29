@@ -1,9 +1,14 @@
+class Empresa < ActiveRecord::Base
+end 
+
 class MenusController < ApplicationController
   before_action :set_menu, only: [:show, :edit, :update, :destroy]
 
   # GET /menus
   # GET /menus.json
   def index
+    @titulo = "Restaurante Dragon Ball"
+    @empresa = Empresa.find(1)
     @menus = Menu.all
   end
 
@@ -14,6 +19,8 @@ class MenusController < ApplicationController
 
   # GET /menus/new
   def new
+    @titulo = "Restaurante Dragon Ball"
+    @empresa = Empresa.find(1)
     @menu = Menu.new
   end
 

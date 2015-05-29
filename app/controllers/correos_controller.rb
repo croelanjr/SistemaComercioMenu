@@ -4,6 +4,8 @@ class CorreosController < ApplicationController
   # GET /correos
   # GET /correos.json
   def index
+    @titulo = "Restaurante Dragon Ball"
+    @empresa = Empresa.find(1)
     @correos = Correo.all
   end
 
@@ -14,6 +16,8 @@ class CorreosController < ApplicationController
 
   # GET /correos/new
   def new
+    @titulo = "Restaurante Dragon Ball"
+    @empresa = Empresa.find(1)
     @correo = Correo.new
   end
 

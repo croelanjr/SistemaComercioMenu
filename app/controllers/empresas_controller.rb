@@ -4,6 +4,8 @@ class EmpresasController < ApplicationController
   # GET /empresas
   # GET /empresas.json
   def index
+    @titulo = "Restaurante Dragon Ball"
+    @empresa = Empresa.find(1)
     @empresas = Empresa.all
   end
 
@@ -14,6 +16,8 @@ class EmpresasController < ApplicationController
 
   # GET /empresas/new
   def new
+    @titulo = "Restaurante Dragon Ball"
+    @empresa = Empresa.find(1)
     @empresa = Empresa.new
   end
 

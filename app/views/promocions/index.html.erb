@@ -14,58 +14,44 @@
     <ul class="nav nav-tabs">
     <li data-toggle="tab"><%= link_to "Home", admin_path %></li>
     <li data-toggle="tab"><%= link_to "Administradores", usuarios_path %></li>
-    <li class="active" data-toggle="tab"><%= link_to "Clientes", clientes_path %></li>
+    <li data-toggle="tab"><%= link_to "Clientes", clientes_path %></li>
     <li data-toggle="tab"><%= link_to "Menus", menus_path %></li>
     <li data-toggle="tab"><%= link_to "Pedidos", home_contactenos_path %></li>
     <li data-toggle="tab"><%= link_to "Comidas Semanales", home_about_path %></li>
     <li data-toggle="tab"><%= link_to "Empresas", empresas_path %></li>
     <li data-toggle="tab"><%= link_to "Locales", locals_path %></li>
-    <li data-toggle="tab"><%= link_to "Promociones", promocions_path %></li>
+    <li class="active" data-toggle="tab"><%= link_to "Promociones", promocions_path %></li>
     </ul>
 </nav>
 <body>
 <p id="notice"><%= notice %></p>
-<p>
-  <strong>Codigo (DNI):</strong>
-  <%= @cliente.codigo_dni %>
-</p>
-<p>
-  <strong>Nombre:</strong>
-  <%= @cliente.nombre %>
-</p>
-<p>
-  <strong>Apellidos:</strong>
-  <%= @cliente.apellido %>
-</p>
-<p>
-  <strong>Fecha Nacimiento:</strong>
-  <%= @cliente.fecha_naci %>
-</p>
-<p>
-  <strong>Dirección:</strong>
-  <%= @cliente.direccion %>
-</p>
-<p>
-  <strong>Distrito:</strong>
-  <%= @cliente.distrito %>
-</p>
-<p>
-  <strong>Clave:</strong>
-  <%= @cliente.clave %>
-</p>
-<p>
-  <strong>Dirección de Delivery:</strong>
-  <%= @cliente.delivery %>
-</p>
-<p>
-  <strong>Teléfono:</strong>
-  <%= @cliente.telefono %>
-</p>
-<p>
-  <strong>Email:</strong>
-  <%= @cliente.email %>
-</p>
-<%= link_to 'Editar', edit_cliente_path(@cliente) %> |
-<%= link_to 'Regresar', clientes_path %>
+<h1>Promociones</h1>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Descripción</th>
+      <th>Imagen</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @promocions.each do |promocion| %>
+      <tr>
+        <td><%= promocion.nombre %></td>
+        <td><%= promocion.descripcion %></td>
+        <td><%= promocion.picture %></td>
+        <td><%= link_to 'Show', promocion %></td>
+        <td><%= link_to 'Edit', edit_promocion_path(promocion) %></td>
+        <td><%= link_to 'Destroy', promocion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Promocion', new_promocion_path %>
 </body>
 </html>

@@ -1,3 +1,6 @@
+class Empresa < ActiveRecord::Base
+end 
+
 class ClientesController < ApplicationController
   before_action :set_cliente, only: [:show, :edit, :update, :destroy]
 
@@ -5,6 +8,8 @@ class ClientesController < ApplicationController
   # GET /clientes.json
   def index
     @clientes = Cliente.all
+    @titulo = "Restaurante Dragon Ball"
+    @empresa = Empresa.find(1)
   end
 
   # GET /clientes/1
@@ -14,6 +19,8 @@ class ClientesController < ApplicationController
 
   # GET /clientes/new
   def new
+    @titulo = "Restaurante Dragon Ball"
+    @empresa = Empresa.find(1)
     @cliente = Cliente.new
   end
 

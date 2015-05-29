@@ -1,9 +1,14 @@
+class Empresa < ActiveRecord::Base
+end 
+
 class UsuariosController < ApplicationController
   before_action :set_usuario, only: [:show, :edit, :update, :destroy]
 
   # GET /usuarios
   # GET /usuarios.json
   def index
+    @titulo = "Restaurante Dragon Ball"
+    @empresa = Empresa.find(1)
     @usuarios = Usuario.all
   end
 
@@ -14,6 +19,8 @@ class UsuariosController < ApplicationController
 
   # GET /usuarios/new
   def new
+    @titulo = "Restaurante Dragon Ball"
+    @empresa = Empresa.find(1)
     @usuario = Usuario.new
   end
 
