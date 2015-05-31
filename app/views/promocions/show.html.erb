@@ -35,8 +35,7 @@
 </p>
 <p>
   <strong>Picture:</strong>
-<!--  <%= @promocion.picture %> -->
-  <%= image_tag(@promocion.imagen_url, :width => 600) if @promocion.imagen.present? %>
+  <%= image_tag(@promocion.imagen_url, :width => 500) if @promocion.imagen.present? %>
 </p>
 
 <%= link_to 'Edit', edit_promocion_path(@promocion) %> |

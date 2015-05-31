@@ -15,6 +15,8 @@ class PromocionsController < ApplicationController
   # GET /promocions/1
   # GET /promocions/1.json
   def show
+    @titulo = "Restaurante Dragon Ball"
+    @empresa = Empresa.find(1)
   end
 
   # GET /promocions/new
@@ -26,6 +28,8 @@ class PromocionsController < ApplicationController
 
   # GET /promocions/1/edit
   def edit
+    @titulo = "Restaurante Dragon Ball"
+    @empresa = Empresa.find(1)
   end
 
   # POST /promocions
@@ -76,6 +80,6 @@ class PromocionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def promocion_params
-      params.require(:promocion).permit(:nombre, :descripcion, :picture)
+      params.require(:promocion).permit(:nombre, :descripcion, :imagen)
     end
 end
