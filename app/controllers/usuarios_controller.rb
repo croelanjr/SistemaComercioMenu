@@ -15,6 +15,7 @@ class UsuariosController < ApplicationController
   # GET /usuarios/1
   # GET /usuarios/1.json
   def show
+    @empresa = Empresa.find(1)
   end
 
   # GET /usuarios/new
@@ -26,6 +27,7 @@ class UsuariosController < ApplicationController
 
   # GET /usuarios/1/edit
   def edit
+    @empresa = Empresa.find(1)
   end
 
   # POST /usuarios

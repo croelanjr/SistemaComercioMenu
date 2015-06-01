@@ -2,10 +2,11 @@ class Empresa < ActiveRecord::Base
   end
 
 class Promocion < ActiveRecord::Base
+    mount_uploader :imagen, ImagenUploader
   end
 
 class Local < ActiveRecord::Base
-end
+  end
 
 class HomeController < ApplicationController
   before_action :set_correo, only: [:show]
@@ -29,6 +30,7 @@ class HomeController < ApplicationController
   def locales
     @titulo = "Locales"
     @empresa = Empresa.find(1)
+    @locals = Local.all
   end
 
   def contactenos

@@ -1,3 +1,9 @@
+#after do
+#  ActiveRecord::Base.connection.close
+#end
+
+#helpers ActionView::Helpers::FormTagHelper
+
 class Empresa < ActiveRecord::Base
 end 
 
@@ -15,6 +21,7 @@ class LocalsController < ApplicationController
   # GET /locals/1
   # GET /locals/1.json
   def show
+    @empresa = Empresa.find(1)
   end
 
   # GET /locals/new
@@ -26,6 +33,7 @@ class LocalsController < ApplicationController
 
   # GET /locals/1/edit
   def edit
+    @empresa = Empresa.find(1)
   end
 
   # POST /locals

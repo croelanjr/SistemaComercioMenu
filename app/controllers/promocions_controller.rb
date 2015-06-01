@@ -3,6 +3,7 @@ end
 
 class PromocionsController < ApplicationController
   before_action :set_promocion, only: [:show, :edit, :update, :destroy]
+  #mount_uploader :imagen, ImagenUploader
 
   # GET /promocions
   # GET /promocions.json
