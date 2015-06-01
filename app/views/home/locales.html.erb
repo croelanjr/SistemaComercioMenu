@@ -21,6 +21,26 @@
     </ul>
 </nav>
 <body>
-	
+<% @locals.each do |local| %>
+<p>
+  <strong>Nombre:</strong>
+  <%= local.nombre %>
+</p>
+
+<p>
+  <strong>Ciudad:</strong>
+  <%= local.ciudad %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= local.direccion %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= local.telefono %>
+</p>
+<% end %>
 </body>
 </html>

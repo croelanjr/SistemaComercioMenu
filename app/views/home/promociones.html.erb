@@ -21,6 +21,10 @@
     </ul>
 </nav>
 <body>
-	
+    <% @promocions.each do |promocion| %>
+        <p><%= promocion.nombre %></td>
+		<p><%= image_tag(promocion.imagen_url, :width => 400) if promocion.imagen.present? %></p>
+        <p><%= promocion.descripcion %></td>
+    <% end %>
 </body>
 </html>

@@ -1,6 +1,12 @@
 class Empresa < ActiveRecord::Base
   end
 
+class Promocion < ActiveRecord::Base
+  end
+
+class Local < ActiveRecord::Base
+end
+
 class HomeController < ApplicationController
   before_action :set_correo, only: [:show]
 
@@ -17,6 +23,7 @@ class HomeController < ApplicationController
   def promociones
     @titulo = "Promociones"
     @empresa = Empresa.find(1)
+    @promocions = Promocion.all
   end
 
   def locales
