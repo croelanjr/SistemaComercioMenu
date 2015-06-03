@@ -15,6 +15,7 @@ class ClientesController < ApplicationController
   # GET /clientes/1
   # GET /clientes/1.json
   def show
+    @empresa = Empresa.find(1)
   end
 
   # GET /clientes/new
@@ -26,6 +27,7 @@ class ClientesController < ApplicationController
 
   # GET /clientes/1/edit
   def edit
+    @empresa = Empresa.find(1)
   end
 
   # POST /clientes

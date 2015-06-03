@@ -29,9 +29,9 @@ gem 'sorcery'
 
 gem 'annotate'
 
-gem 'therubyracer'
+#gem 'therubyracer'
 
-gem 'less-rails'
+#gem 'less-rails'
 
 gem 'twitter-bootstrap-rails'
 

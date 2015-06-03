@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :comidas
+
   resources :promocions
 
   resources :locals

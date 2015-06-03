@@ -1,9 +1,3 @@
-#after do
-#  ActiveRecord::Base.connection.close
-#end
-
-#helpers ActionView::Helpers::FormTagHelper
-
 class Empresa < ActiveRecord::Base
 end 
 
