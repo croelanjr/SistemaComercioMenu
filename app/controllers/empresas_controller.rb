@@ -1,5 +1,6 @@
 class EmpresasController < ApplicationController
   before_action :set_empresa, only: [:show, :edit, :update]
+  before_action :authenticate_admi! 
 
   # GET /empresas
   # GET /empresas.json

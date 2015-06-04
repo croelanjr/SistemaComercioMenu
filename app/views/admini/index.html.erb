@@ -16,7 +16,7 @@
     <li data-toggle="tab"><%= link_to "Administradores", usuarios_path %></li>
     <li data-toggle="tab"><%= link_to "Clientes", clientes_path %></li>
     <li data-toggle="tab"><%= link_to "Menus", menus_path %></li>
-    <li data-toggle="tab"><%= link_to "Pedidos", home_contactenos_path %></li>
+    <li data-toggle="tab"><%= link_to "Pedidos", admini_pedidos_path %></li>
     <li data-toggle="tab"><%= link_to "Comidas Semanales", comidas_path %></li>
     <li data-toggle="tab"><%= link_to "Empresas", empresas_path %></li>
 	<li data-toggle="tab"><%= link_to "Locales", locals_path %></li>
@@ -24,6 +24,18 @@
     </ul>
 </nav>
 <body>
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+
+<% if admi_signed_in?%>
+	<p>Session iniciada</p>
+	<p><%= link_to 'Finalizar Sesión', destroy_admi_session_path, method: :delete %></p>
+	<% else %>
+	<p>
+		<%= link_to 'Iniciar sesión', new_admi_session_path %>
+		<%= link_to 'Registrarse', new_admi_registration_path %>
+	</p>
+<% end %>
 	
 </body>
 </html>

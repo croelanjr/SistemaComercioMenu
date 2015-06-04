@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  devise_for :admis, controllers: {sessions: "admis/sessions"}
+
   resources :comidas
 
   resources :promocions
@@ -11,7 +13,7 @@ Rails.application.routes.draw do
   resources :empresas
 
   #get 'home/index'
-  root 'home#index'
+  root to: 'home#index'
   
   get 'home/menus'
 

@@ -3,6 +3,7 @@ end
 
 class PromocionsController < ApplicationController
   before_action :set_promocion, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admi! 
   #mount_uploader :imagen, ImagenUploader
 
   # GET /promocions

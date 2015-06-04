@@ -1,14 +1,9 @@
-#after do
-#  ActiveRecord::Base.connection.close
-#end
-
-#helpers ActionView::Helpers::FormTagHelper
-
 class Empresa < ActiveRecord::Base
 end 
 
 class MenusController < ApplicationController
   before_action :set_menu, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admi! 
 
   # GET /menus
   # GET /menus.json

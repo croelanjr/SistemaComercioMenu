@@ -3,6 +3,7 @@ end
 
 class ClientesController < ApplicationController
   before_action :set_cliente, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_admi! 
 
   # GET /clientes
   # GET /clientes.json

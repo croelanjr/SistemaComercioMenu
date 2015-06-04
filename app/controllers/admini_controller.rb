@@ -1,13 +1,8 @@
-#after do
-#  ActiveRecord::Base.connection.close
-#end
-
-#helpers ActionView::Helpers::FormTagHelper
-
 class Empresa < ActiveRecord::Base
 end 
 
 class AdminiController < ApplicationController
+  before_action :authenticate_admi! 
 
   def index
     @titulo = "Restaurante Dragon Ball"
