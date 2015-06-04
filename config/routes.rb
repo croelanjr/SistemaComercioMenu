@@ -2,16 +2,6 @@ Rails.application.routes.draw do
 
   devise_for :admis, controllers: {sessions: "admis/sessions"}
 
-  resources :comidas
-
-  resources :promocions
-
-  resources :locals
-
-  resources :correos
-
-  resources :empresas
-
   #get 'home/index'
   root to: 'home#index'
   
@@ -48,6 +38,18 @@ Rails.application.routes.draw do
   resources :menus
 
   resources :usuarios
+
+  resources :comidas
+
+  resources :promocions
+
+  resources :locals
+
+  resources :correos
+
+  resources :empresas
+
+  resources :pedidos
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
