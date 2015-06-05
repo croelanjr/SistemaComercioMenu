@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dia: MyString
+  fecha: MyString
+  codigo: MyString
+  menu: MyString
+  tipo: MyString
+  ciudad_id: 
+  local_id: 
+  cantidad: 1
+  precio: 9.99
+
+two:
+  dia: MyString
+  fecha: MyString
+  codigo: MyString
+  menu: MyString
+  tipo: MyString
+  ciudad_id: 
+  local_id: 
+  cantidad: 1
+  precio: 9.99

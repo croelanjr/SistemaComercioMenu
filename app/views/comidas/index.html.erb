@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= @titulo %></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+  <div clas="titulo">
+    <h1><%= @empresa.name %></h1>
+  </div>
+</head>
+<nav>
+    <ul class="nav nav-tabs">
+    <li data-toggle="tab"><%= link_to "Home", admin_path %></li>
+    <li data-toggle="tab"><%= link_to "Administradores", usuarios_path %></li>
+    <li data-toggle="tab"><%= link_to "Clientes", clientes_path %></li>
+    <li data-toggle="tab"><%= link_to "Menus", menus_path %></li>
+    <li data-toggle="tab"><%= link_to "Pedidos", admini_pedidos_path %></li>
+    <li class="active" data-toggle="tab"><%= link_to "Comidas Semanales", comidas_path %></li>
+    <li data-toggle="tab"><%= link_to "Empresas", empresas_path %></li>
+    <li data-toggle="tab"><%= link_to "Locales", locals_path %></li>
+    <li data-toggle="tab"><%= link_to "Promociones", promocions_path %></li>
+    </ul>
+</nav>
+<body>
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Comidas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dia</th>
+      <th>Fecha</th>
+      <th>Codigo</th>
+      <th>Menu</th>
+      <th>Tipo</th>
+      <th>Ciudad</th>
+      <th>Local</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @comidas.each do |comida| %>
+      <tr>
+        <td><%= comida.dia %></td>
+        <td><%= comida.fecha %></td>
+        <td><%= comida.codigo %></td>
+        <td><%= comida.menu %></td>
+        <td><%= comida.tipo %></td>
+        <td><%= comida.ciudad %></td>
+        <td><%= comida.local %></td>
+        <td><%= comida.cantidad %></td>
+        <td><%= comida.precio %></td>
+        <td><%= link_to 'Show', comida %></td>
+        <td><%= link_to 'Edit', edit_comida_path(comida) %></td>
+        <td><%= link_to 'Destroy', comida, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Comida', new_comida_path %>
+</body>
+</html>

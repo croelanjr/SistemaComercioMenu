@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  numero: 1
+  fecha: 2015-06-04
+  nombre: MyString
+  dni: MyString
+  telefono: MyString
+  email: MyString
+  local: MyString
+  menu: MyString
+  cantidad: 1
+  precio: 9.99
+  delivery_id: 
+  observacion: MyString
+
+two:
+  numero: 1
+  fecha: 2015-06-04
+  nombre: MyString
+  dni: MyString
+  telefono: MyString
+  email: MyString
+  local: MyString
+  menu: MyString
+  cantidad: 1
+  precio: 9.99
+  delivery_id: 
+  observacion: MyString
