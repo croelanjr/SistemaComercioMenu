@@ -2,8 +2,9 @@ class Empresa < ActiveRecord::Base
 end
 
 class PedidosController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_pedido, only: [:show, :edit, :update, :destroy]
-
+  
   # GET /pedidos
   # GET /pedidos.json
   def index

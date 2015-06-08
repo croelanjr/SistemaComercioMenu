@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  devise_for :admis, controllers: {sessions: "admis/sessions"}
+  devise_for :users, controllers: {sessions: "users/sessions", registrations: "users/registratios"}
+  devise_for :admis, controllers: {sessions: "admis/sessions", registrations: "admis/registrations"}
 
   devise_for :usuarios, controllers: {usuarios: 'usuarios'}
 
@@ -8,6 +9,8 @@ Rails.application.routes.draw do
   root to: 'home#index'
   
   get 'home/menus', to: 'vista_pedido#nuevo'
+
+  post 'home/menus', to: 'vista_pedido#nuevo'
 
   get 'home/promociones'
 
@@ -52,6 +55,8 @@ Rails.application.routes.draw do
   resources :empresas
 
   resources :pedidos
+
+  resources :vista_pedido
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
