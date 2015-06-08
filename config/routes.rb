@@ -2,10 +2,12 @@ Rails.application.routes.draw do
 
   devise_for :admis, controllers: {sessions: "admis/sessions"}
 
+  devise_for :usuarios, controllers: {usuarios: 'usuarios'}
+
   #get 'home/index'
   root to: 'home#index'
   
-  get 'home/menus'
+  get 'home/menus', to: 'vista_pedido#nuevo'
 
   get 'home/promociones'
 
