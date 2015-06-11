@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title><%= @titulo %></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+	<div clas="titulo">
+		<h1><%= @empresa.name %></h1>
+	</div>
+</head>
+<body>
+<nav>
+    <ul class="nav nav-tabs navbar-nav">
+    <li data-toggle="tab"><%= link_to "Home", root_path %></li>
+    <li class="active" data-toggle="tab"><%= link_to "Menu", home_menus_path %></li>
+    <li data-toggle="tab"><%= link_to "Promociones", home_promociones_path %></li>
+    <li data-toggle="tab"><%= link_to "Locales", home_locales_path %></li>
+    <li data-toggle="tab"><%= link_to "Contactenos", home_contactenos_path %></li>
+    <li data-toggle="tab"><%= link_to "About", home_about_path %></li>
+	</ul>
+	<% if user_signed_in?%>
+	<ul class="nav navbar-nav navbar-right">
+	<p>Hola <%= link_to current_user.username %></p>
+	<li><%= link_to 'Editar Sessión', edit_user_registration_path %></li>	
+	<li><%= link_to 'Finalizar Sesión', destroy_user_session_path, method: :delete %></li>
+	<% else %>
+	<p>
+	<li><%= link_to 'Iniciar sesión', new_user_session_path %></li>
+	<li><%= link_to 'Registrarse', new_user_registration_path %></li>
+	</p>
+	</ul>
+	<% end %>
+</nav>
+
+<div class="container">
+<h1 class="letragrande">New Pedido</h1>
+<%= render 'form' %>
+<%= link_to 'Cancelar', root_path %>
+</div>
+</body>
+</html>

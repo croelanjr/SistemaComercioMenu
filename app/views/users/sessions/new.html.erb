@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title><%= @titulo %></title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+	<div clas="titulo">
+		<h1>DB SYSTEM</h1>
+	</div>
+</head>
+<body>
+<nav>
+    <ul class="nav nav-tabs navbar-nav">
+    <li data-toggle="tab"><%= link_to "Home", root_path %></li>
+    <li class="active" data-toggle="tab"><%= link_to "Menu", home_menus_path %></li>
+    <li data-toggle="tab"><%= link_to "Promociones", home_promociones_path %></li>
+    <li data-toggle="tab"><%= link_to "Locales", home_locales_path %></li>
+    <li data-toggle="tab"><%= link_to "Contactenos", home_contactenos_path %></li>
+    <li data-toggle="tab"><%= link_to "About", home_about_path %></li>
+	</ul>
+</nav>
+<div class="container">
+
+<h1 class="log2">Acceso de Menu - Clientes</h1>
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+  <div class="form-inputs">
+    <%= f.input :email, required: false, autofocus: true, label: "Correo Electronico" %>
+    <%= f.input :password, required: false, label: "Contraseña" %>
+    <%= f.input :remember_me, label: "Recordarme", as: :boolean if devise_mapping.rememberable? %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Ingresar" %>
+  </div>
+<% end %>
+<%= render "users/shared/links" %>
+<p class="btn btn-info btn-lg"><%= link_to 'Cancelar', root_path %></p>
+</div>
+</body>
+</html>

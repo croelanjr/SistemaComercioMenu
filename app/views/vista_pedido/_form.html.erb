@@ -1,0 +1,16 @@
+<%= simple_form_for(@pedidoo) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <p>Menú del día <%= @dia_palabra %></p>
+    <%= f.input :local, collection: @arreglo %>
+    <p>Arma tu menú</p>
+    <p>Menu</p>
+    <%= f.input :menu, collection: @arreglo_ensalada, label: "Ensalada/Sopa" %>
+    <%= f.input :menu1, collection: @arreglo_segundo, label: "Segundo" %>
+  </div>
+
+   <div class="form-actions">
+    <%= f.button :submit, "Finalizar la Compra" %>
+  </div>
+<% end %>

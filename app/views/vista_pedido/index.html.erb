@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><%= @titulo %></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+  <div clas="titulo">
+    <h1><%= @empresa.name %></h1>
+  </div>
+</head>
+<nav>
+    <ul class="nav nav-tabs">
+    <li data-toggle="tab"><%= link_to "Home", root_path %></li>
+    <li class="active" data-toggle="tab"><%= link_to "Menu", home_menus_path %></li>
+    <li data-toggle="tab"><%= link_to "Promociones", home_promociones_path %></li>
+    <li data-toggle="tab"><%= link_to "Locales", home_locales_path %></li>
+    <li data-toggle="tab"><%= link_to "Contactenos", home_contactenos_path %></li>
+    <li data-toggle="tab"><%= link_to "About", home_about_path %></li>
+    </ul>
+
+  <% if user_signed_in?%>
+  <ul class="nav navbar-nav navbar-right">
+  <p>Hola <%= link_to current_user.username %></p>
+  <li><%= link_to 'Editar Sessión', edit_user_registration_path %></li> 
+  <li><%= link_to 'Finalizar Sesión', destroy_user_session_path, method: :delete %></li>
+  <% else %>
+  <p>
+  <li><%= link_to 'Iniciar sesión', new_user_session_path %></li>
+  <li><%= link_to 'Registrarse', new_user_registration_path %></li>
+  </p>
+  </ul>
+  <% end %>
+</nav>
+
+<body>
+
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Pedidos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Numero</th>
+      <th>Fecha</th>
+      <th>Nombre</th>
+      <th>Dni</th>
+      <th>Telefono</th>
+      <th>Email</th>
+      <th>Local</th>
+      <th>Menu</th>
+      <th>Cantidad</th>
+      <th>Precio</th>
+      <th>Delivery</th>
+      <th>Observacion</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pedido.each do |pedido| %>
+      <tr>
+        <td><%= pedido.numero %></td>
+        <td><%= pedido.fecha %></td>
+        <td><%= pedido.nombre %></td>
+        <td><%= pedido.dni %></td>
+        <td><%= pedido.telefono %></td>
+        <td><%= pedido.email %></td>
+        <td><%= pedido.local %></td>
+        <td><%= pedido.menu %></td>
+        <td><%= pedido.cantidad %></td>
+        <td><%= pedido.precio %></td>
+        <td><%= pedido.delivery %></td>
+        <td><%= pedido.observacion %></td>
+        <td><%= link_to 'Show', pedido %></td>
+        <td><%= link_to 'Edit', edit_pedido_path(pedido) %></td>
+        <td><%= link_to 'Destroy', pedido, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Pedido', new_pedido_path %>
+</body>
+</html>
