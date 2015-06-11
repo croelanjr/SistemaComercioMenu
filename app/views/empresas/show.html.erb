@@ -18,55 +18,41 @@
     <li data-toggle="tab"><%= link_to "Menus", menus_path %></li>
     <li data-toggle="tab"><%= link_to "Pedidos", admini_pedidos_path %></li>
     <li data-toggle="tab"><%= link_to "Comidas Semanales", comidas_path %></li>
-    <li class="active "data-toggle="tab"><%= link_to "Empresas", empresas_path %></li>
+    <li class="active" data-toggle="tab"><%= link_to "Empresas", empresas_path %></li>
     <li data-toggle="tab"><%= link_to "Locales", locals_path %></li>
     <li data-toggle="tab"><%= link_to "Promociones", promocions_path %></li>
     </ul>
 </nav>
 <body>
-<p id="notice"><%= notice %></p>
+<div class="container">
+<%- model_class = Empresa -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @empresa.name %>
-</p>
+<dl class="dl-horizontal">
+  <dt><strong>Empresa:</strong></dt>
+  <dd><%= @empresas.name %></dd>
+  <dt><strong>RUC:</strong></dt>
+  <dd><%= @empresas.ruc %></dd>
+  <dt><strong>Dirección:</strong></dt>
+  <dd><%= @empresas.direccion %></dd>
+  <dt><strong>Telefono:</strong></dt>
+  <dd><%= @empresas.telefono %></dd>
+  <dt><strong>Moneda:</strong></dt>
+  <dd><%= @empresas.moneda %></dd>
+  <dt><strong>I.G.V.:</strong></dt>
+  <dd><%= @empresas.igv %></dd>
+  <dt><strong>About Nro. 1:</strong></dt>
+  <dd><%= @empresas.about_1 %></dd>
+  <dt><strong>About Nro. 2:</strong></dt>
+  <dd><%= @empresas.about_2 %></dd>
+  <dt><strong>Picture:</strong></dt>
+  <p><%= image_tag @empresas.logo, :width => 200 %></p>
+</dl>
 
-<p>
-  <strong>Ruc:</strong>
-  <%= @empresa.ruc %>
-</p>
-
-<p>
-  <strong>Direccion:</strong>
-  <%= @empresa.direccion %>
-</p>
-
-<p>
-  <strong>Telefono:</strong>
-  <%= @empresa.telefono %>
-</p>
-
-<p>
-  <strong>Moneda:</strong>
-  <%= @empresa.moneda %>
-</p>
-
-<p>
-  <strong>Igv:</strong>
-  <%= @empresa.igv %>
-</p>
-
-<p>
-  <strong>About 1:</strong>
-  <%= @empresa.about_1 %>
-</p>
-
-<p>
-  <strong>About 2:</strong>
-  <%= @empresa.about_2 %>
-</p>
-
-<%= link_to 'Edit', edit_empresa_path(@empresa) %> |
-<%= link_to 'Back', empresas_path %>
+<%= link_to "Regresar", empresas_path, :class => 'btn btn-default' %>
+<%= link_to "Editar", edit_empresa_path(@empresas), :class => 'btn btn-default' %>
+</div>
 </body>
 </html>

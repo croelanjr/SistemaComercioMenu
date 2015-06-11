@@ -1,3 +1,4 @@
 class Pedido < ActiveRecord::Base
-  belongs_to :delivery
+  #attr_accesible :user_id
+  belongs_to :user
 end

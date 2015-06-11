@@ -1,8 +1,4 @@
 class CreatePedidos < ActiveRecord::Migration
-  def drop
-    drop_table :pedidos
-  end
-
   def change
     create_table :pedidos do |t|
       t.integer :numero
@@ -13,10 +9,12 @@ class CreatePedidos < ActiveRecord::Migration
       t.string :email
       t.string :local
       t.string :menu
+      t.string :menu1
       t.integer :cantidad
-      t.decimal :precio
+      t.float :precio
       t.string :delivery
       t.string :observacion
+      t.references :usuario
 
       t.timestamps null: false
     end

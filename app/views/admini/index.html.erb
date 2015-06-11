@@ -28,14 +28,18 @@
 <p class="alert"><%= alert %></p>
 
 <% if admi_signed_in?%>
-	<p>Session iniciada</p>
-	<p><%= link_to 'Finalizar Sesión', destroy_admi_session_path, method: :delete %></p>
-	<% else %>
-	<p>
-		<%= link_to 'Iniciar sesión', new_admi_session_path %>
-		<%= link_to 'Registrarse', new_admi_registration_path %>
-	</p>
+	<p class="log2">Bienvenido a la Herramienta Administrador, Hola <%= link_to current_admi.username %></p>
+	<p class="log2"><%= link_to 'Finalizar Sesión', destroy_admi_session_path, method: :delete %></p>
 <% end %>
-	
+    <div class="imagen1">
+    <a href=<%= usuarios_path %>><img src="admin.jpg" width=150 height=150></a>
+    <a href=<%= clientes_path %>><img src="users.jpg" width=150 height=150></a>
+    <a href=<%= menus_path %>><img src="menus.jpg" width=150 height=150></a>
+    <a href=<%= pedidos_path %>><img src="pedidos.bmp" width=150 height=150></a><br />
+    <a href=<%= comidas_path %>><img src="comida.jpg" width=150 height=150></a>
+    <a href=<%= empresas_path %>><img src="empresa.jpg" width=150 height=150></a>
+	<a href=<%= locals_path %>><img src="local.png" width=150 height=150></a>
+	<a href=<%= promocions_path %>><img src="promocion.jpg" width=150 height=150></a>
+	</div>
 </body>
 </html>

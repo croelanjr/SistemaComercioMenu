@@ -1,10 +1,17 @@
-<h2>Sign up</h2>
+<h2>Registrar Administradores</h2>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
     <%= f.input :email, required: true, autofocus: true %>
+    <%= f.input :username, required: true, label: "Nombre de Administrador" %>
+    <%= f.input :lastname, label: "Apellidos" %>
+    <%= f.input :fechadenacimiento, as: :date, start_year: Date.today.year - 90, end_year: Date.today.year, order: [:day, :month, :year], label: "Fecha de Nacimiento" %>
+    <%= f.input :dni, label: "D.N.I." %>
+    <%= f.input :direccion, label: "Dirección" %>
+    <%= f.input :distrito, label: "Distrito" %>
+    <%= f.input :telefono, label: "Telefono" %>
     <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
     <%= f.input :password_confirmation, required: true %>
   </div>

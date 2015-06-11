@@ -9,7 +9,13 @@
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
-
+    <%= f.input :username, required: true, label: "Nombre de Administrador" %>
+    <%= f.input :lastname, label: "Apellidos" %>
+    <%= f.input :fechadenacimiento, label: "Fecha de Nacimiento" %>
+    <%= f.input :dni, label: "D.N.I." %>
+    <%= f.input :direccion, label: "Dirección" %>
+    <%= f.input :distrito, label: "Distrito" %>
+    <%= f.input :telefono, label: "Telefono" %>
     <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
     <%= f.input :password_confirmation, required: false %>
     <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>

@@ -10,7 +10,7 @@ class UsuariosController < ApplicationController
   def index
     @titulo = "Restaurante Dragon Ball"
     @empresa = Empresa.find(1)
-    @usuarios = Usuario.all
+    @usuarios = Admi.all
   end
 
   # GET /usuarios/1
@@ -23,7 +23,7 @@ class UsuariosController < ApplicationController
   def new
     @titulo = "Restaurante Dragon Ball"
     @empresa = Empresa.find(1)
-    @usuario = Usuario.new
+    @usuario = Admi.new
   end
 
   # GET /usuarios/1/edit
@@ -34,7 +34,7 @@ class UsuariosController < ApplicationController
   # POST /usuarios
   # POST /usuarios.json
   def create
-    @usuario = Usuario.new(usuario_params)
+    @usuario = Admi.new(usuario_params)
 
     respond_to do |format|
       if @usuario.save
@@ -74,7 +74,7 @@ class UsuariosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_usuario
-      @usuario = Usuario.find(params[:id])
+      @usuario = Admin.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

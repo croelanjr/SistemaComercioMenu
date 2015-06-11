@@ -32,10 +32,7 @@
       <th>Codigo dni</th>
       <th>Nombre</th>
       <th>Apellidos</th>
-      <th>Fecha Nacimiento</th>
-      <th>Dirección</th>
       <th>Distrito</th>
-      <th>Delivery</th>
       <th>Telefono</th>
       <th colspan="3"></th>
     </tr>
@@ -44,17 +41,14 @@
   <tbody>
     <% @clientes.each do |cliente| %>
       <tr>
-        <td><%= cliente.codigo_dni %></td>
-        <td><%= cliente.nombre %></td>
-        <td><%= cliente.apellido %></td>
-        <td><%= cliente.fecha_naci %></td>
-        <td><%= cliente.direccion %></td>
+        <td><%= cliente.dni %></td>
+        <td><%= cliente.username %></td>
+        <td><%= cliente.lastname %></td>
         <td><%= cliente.distrito %></td>
-        <td><%= cliente.delivery %></td>
         <td><%= cliente.telefono %></td>
-        <td><%= link_to 'Visualizar', cliente %></td>
-        <td><%= link_to 'Editar', edit_cliente_path(cliente) %></td>
-        <td><%= link_to 'Eliminar', cliente, method: :delete, data: { confirm: 'Estas Seguro que desea Eliminar?' } %></td>
+        <td><%= link_to 'Visualizar', cliente_path(cliente) %></td>
+        <td><%= link_to 'Editar', edit_user_registration_path %></td>
+        <td><%= link_to 'Eliminar', cliente_path(cliente), method: :delete, data: { confirm: 'Estas Seguro que desea Eliminar?' } %></td>
       </tr>
     <% end %>
   </tbody>

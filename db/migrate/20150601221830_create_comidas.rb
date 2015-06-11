@@ -9,7 +9,7 @@ class CreateComidas < ActiveRecord::Migration
       t.string :ciudad
       t.string :local
       t.integer :cantidad
-      t.decimal :precio
+      t.float :precio
 
       t.timestamps null: false
     end

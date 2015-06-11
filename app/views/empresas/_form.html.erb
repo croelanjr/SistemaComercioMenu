@@ -1,49 +1,19 @@
-<%= form_for(@empresa) do |f| %>
-  <% if @empresa.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@empresa.errors.count, "error") %> prohibited this empresa from being saved:</h2>
+<%= simple_form_for @empresas, html: {multipart: true} do |f| %>
+  <%= f.error_notification %>
+  <div class="form-inputs">
+  <%= f.input :name, label: "Empresa" %>
+  <%= f.input :ruc, label: "R.U.C." %>
+  <%= f.input :direccion, label: "Dirección" %>
+  <%= f.input :telefono, label: "Telefono" %>
+  <%= f.input :moneda, label: "Moneda" %>
+  <%= f.input :igv, label: "I.G.V." %>
+  <%= f.input :about_1, label: "About Nro. 1"%>
+  <%= f.input :about_2, label: "About Nro. 2" %>
+  <%= f.input :logo, as: :file, label: "Logo de la empresa" %>
+  </div>
 
-      <ul>
-      <% @empresa.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :ruc %><br>
-    <%= f.text_field :ruc %>
-  </div>
-  <div class="field">
-    <%= f.label :direccion %><br>
-    <%= f.text_field :direccion %>
-  </div>
-  <div class="field">
-    <%= f.label :telefono %><br>
-    <%= f.text_field :telefono %>
-  </div>
-  <div class="field">
-    <%= f.label :moneda %><br>
-    <%= f.text_field :moneda %>
-  </div>
-  <div class="field">
-    <%= f.label :igv %><br>
-    <%= f.text_field :igv %>
-  </div>
-  <div class="field">
-    <%= f.label :about_1 %><br>
-    <%= f.text_area :about_1 %>
-  </div>
-  <div class="field">
-    <%= f.label :about_2 %><br>
-    <%= f.text_area :about_2 %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+<div class="form-actions">
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to "Cancelar", empresas_path, :class => 'btn btn-default' %>
+</div>
 <% end %>

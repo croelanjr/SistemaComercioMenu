@@ -25,7 +25,7 @@
 </nav>
 <body>
 <p id="notice"><%= notice %></p>
-
+<div class="container">
 <h1>Listado de Usuarios / Administrador de Local</h1>
 
 <table>
@@ -43,14 +43,14 @@
   <tbody>
     <% @usuarios.each do |usuario| %>
       <tr>
-        <td><%= usuario.nombres %></td>
+        <td><%= usuario.username %></td>
+        <td><%= usuario.lastname %></td>
         <td><%= usuario.dni %></td>
         <td><%= usuario.email %></td>
-        <td><%= usuario.tipo %></td>
-        <td><%= usuario.local %></td>
-        <td><%= link_to 'Visualizar', usuario %></td>
-        <td><%= link_to 'Editar', edit_usuario_path(usuario) %></td>
-        <td><%= link_to 'Eliminar', usuario, method: :delete, data: { confirm: 'Estas Seguro que desea Eliminar?' } %></td>
+        <td><%= usuario.telefono %></td>
+        <td><%= link_to 'Visualizar', usuario_path(usuario) %></td>
+        <td><%= link_to 'Editar', edit_admi_registration_path %></td>
+        <td><%= link_to 'Eliminar', usuario_path(usuario), method: :delete, data: { confirm: 'Estas Seguro que desea Eliminar?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -58,6 +58,7 @@
 
 <br>
 
-<%= link_to 'Nuevo Usuario', new_usuario_path %>
+<%= link_to 'Nuevo Usuario', new_admi_registration_path %>
+</div>
 </body>
 </html>

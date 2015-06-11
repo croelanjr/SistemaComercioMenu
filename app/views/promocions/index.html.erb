@@ -24,13 +24,13 @@
     </ul>
 </nav>
 <body>
+<div class="container">
 <p id="notice"><%= notice %></p>
-<h1>Promociones</h1>
+<h1 class="log1">Promociones</h1>
 <table>
   <thead>
     <tr>
       <th>Nombre</th>
-      <th>Descripción</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -38,18 +38,20 @@
   <tbody>
     <% @promocions.each do |promocion| %>
       <tr>
-        <td><%= promocion.nombre %></td>
-        <td><%= promocion.descripcion %></td>
-        <td><%= link_to 'Show', promocion %></td>
-        <td><%= link_to 'Edit', edit_promocion_path(promocion) %></td>
-        <td><%= link_to 'Destroy', promocion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= promocion.nombre %>  </td>
+        <td><%= link_to 'Visualizar', promocion %></td>
+        <td><%= link_to 'Editar', edit_promocion_path(promocion) %></td>
+        <td><%= link_to 'Eliminar', promocion, method: :delete, data: { confirm: 'Esta Seguro que desea Eliminar?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 
-<%= link_to 'New Promocion', new_promocion_path %>
+<div class="container">
+<p class="btn btn-info btn-block"><%= link_to 'Nueva Promoción', new_promocion_path %></p>
+</div>
 </body>
 </html>

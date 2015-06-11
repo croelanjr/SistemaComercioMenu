@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  devise_for :users, controllers: {sessions: "users/sessions", registrations: "users/registratios"}
+  devise_for :users, controllers: {sessions: "users/sessions", registrations: "users/registrations"}
   devise_for :admis, controllers: {sessions: "admis/sessions", registrations: "admis/registrations"}
 
   devise_for :usuarios, controllers: {usuarios: 'usuarios'}
@@ -8,9 +8,13 @@ Rails.application.routes.draw do
   #get 'home/index'
   root to: 'home#index'
   
-  get 'home/menus', to: 'vista_pedido#nuevo'
+  #get 'home/menus', to: 'vista_pedido#new'
 
-  post 'home/menus', to: 'vista_pedido#nuevo'
+  #post 'home/menus', to: 'vista_pedido#new'
+
+  get 'home/menus', to: 'vista_pedido#index'
+
+  #post 'home/menus', to: 'vista_pedido#nuevo'
 
   get 'home/promociones'
 

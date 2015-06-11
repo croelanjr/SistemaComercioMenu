@@ -1,5 +1,7 @@
+
+
 class EmpresasController < ApplicationController
-  before_action :set_empresa, only: [:show, :edit, :update]
+  before_action :set_empresa, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_admi! 
 
   # GET /empresas
@@ -20,7 +22,7 @@ class EmpresasController < ApplicationController
   def new
     @titulo = "Restaurante Dragon Ball"
     @empresa = Empresa.find(1)
-    @empresa = Empresa.new
+    @empresas = Empresa.new
   end
 
   # GET /empresas/1/edit
@@ -31,15 +33,15 @@ class EmpresasController < ApplicationController
   # POST /empresas
   # POST /empresas.json
   def create
-    @empresa = Empresa.new(empresa_params)
+    @empresas = Empresa.new(empresa_params)
 
     respond_to do |format|
-      if @empresa.save
-        format.html { redirect_to @empresa, notice: 'Empresa was successfully created.' }
-        format.json { render :show, status: :created, location: @empresa }
+      if @empresas.save
+        format.html { redirect_to @empresas, notice: 'Empresa was successfully created.' }
+        format.json { render :show, status: :created, location: @empresas }
       else
         format.html { render :new }
-        format.json { render json: @empresa.errors, status: :unprocessable_entity }
+        format.json { render json: @empresas.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -48,12 +50,13 @@ class EmpresasController < ApplicationController
   # PATCH/PUT /empresas/1.json
   def update
     respond_to do |format|
-      if @empresa.update(empresa_params)
-        format.html { redirect_to @empresa, notice: 'Empresa was successfully updated.' }
-        format.json { render :show, status: :ok, location: @empresa }
+      if @empresas.update(empresa_params)
+        #File.extname(params[:logo].path)
+        format.html { redirect_to @empresas, notice: 'Empresa was successfully updated.' }
+        format.json { render :show, status: :ok, location: @empresas }
       else
         format.html { render :edit }
-        format.json { render json: @empresa.errors, status: :unprocessable_entity }
+        format.json { render json: @empresas.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -61,11 +64,11 @@ class EmpresasController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_empresa
-      @empresa = Empresa.find(params[:id])
+      @empresas = Empresa.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def empresa_params
-      params.require(:empresa).permit(:name, :ruc, :direccion, :telefono, :moneda, :igv, :about_1, :about_2)
+      params.require(:empresa).permit(:name, :ruc, :direccion, :telefono, :moneda, :igv, :about_1, :about_2, :logo)
     end
 end

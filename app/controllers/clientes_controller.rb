@@ -8,7 +8,7 @@ class ClientesController < ApplicationController
   # GET /clientes
   # GET /clientes.json
   def index
-    @clientes = Cliente.all
+    @clientes = User.all
     @titulo = "Restaurante Dragon Ball"
     @empresa = Empresa.find(1)
   end
@@ -23,7 +23,7 @@ class ClientesController < ApplicationController
   def new
     @titulo = "Restaurante Dragon Ball"
     @empresa = Empresa.find(1)
-    @cliente = Cliente.new
+    @cliente = User.new
   end
 
   # GET /clientes/1/edit
@@ -34,7 +34,7 @@ class ClientesController < ApplicationController
   # POST /clientes
   # POST /clientes.json
   def create
-    @cliente = Cliente.new(cliente_params)
+    @cliente = User.new(cliente_params)
 
     respond_to do |format|
       if @cliente.save
@@ -74,7 +74,7 @@ class ClientesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_cliente
-      @cliente = Cliente.find(params[:id])
+      @cliente = User.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

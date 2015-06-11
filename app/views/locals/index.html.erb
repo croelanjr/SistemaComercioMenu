@@ -24,9 +24,10 @@
     </ul>
 </nav>
 <body>
+<div class="container">
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Locals</h1>
+<h1 class="log1">Locales</h1>
 
 <table>
   <thead>
@@ -46,16 +47,18 @@
         <td><%= local.ciudad %></td>
         <td><%= local.direccion %></td>
         <td><%= local.telefono %></td>
-        <td><%= link_to 'Show', local %></td>
-        <td><%= link_to 'Edit', edit_local_path(local) %></td>
-        <td><%= link_to 'Destroy', local, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Visualizar', local %></td>
+        <td><%= link_to 'Editar', edit_local_path(local) %></td>
+        <td><%= link_to 'Eliminar', local, method: :delete, data: { confirm: 'Estas Seguro que desea Eliminar?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Local', new_local_path %>
+</div>
+<div class="container">
+<p class="btn btn-info btn-block"><%= link_to 'Nuevo Local', new_local_path %></p>
+</div>
 </body>
 </html>

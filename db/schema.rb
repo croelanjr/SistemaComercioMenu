@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150608045347) do
+ActiveRecord::Schema.define(version: 20150611050546) do
 
   create_table "admis", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -26,6 +26,13 @@ ActiveRecord::Schema.define(version: 20150608045347) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
+    t.string   "username",               limit: 255
+    t.string   "lastname",               limit: 255
+    t.string   "fechadenacimiento",      limit: 255
+    t.string   "dni",                    limit: 255
+    t.string   "direccion",              limit: 255
+    t.string   "distrito",               limit: 255
+    t.string   "telefono",               limit: 255
   end
 
   add_index "admis", ["email"], name: "index_admis_on_email", unique: true, using: :btree
@@ -64,9 +71,9 @@ ActiveRecord::Schema.define(version: 20150608045347) do
     t.string   "ciudad",     limit: 255
     t.string   "local",      limit: 255
     t.integer  "cantidad",   limit: 4
-    t.decimal  "precio",                 precision: 10
-    t.datetime "created_at",                            null: false
-    t.datetime "updated_at",                            null: false
+    t.float    "precio",     limit: 24
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
   end
 
   create_table "correos", force: :cascade do |t|
@@ -89,6 +96,7 @@ ActiveRecord::Schema.define(version: 20150608045347) do
     t.text     "about_2",    limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.string   "logo",       limit: 255
   end
 
   create_table "locals", force: :cascade do |t|
@@ -117,13 +125,14 @@ ActiveRecord::Schema.define(version: 20150608045347) do
     t.string   "email",       limit: 255
     t.string   "local",       limit: 255
     t.string   "menu",        limit: 255
+    t.string   "menu1",       limit: 255
     t.integer  "cantidad",    limit: 4
-    t.decimal  "precio",                  precision: 10
+    t.float    "precio",      limit: 24
     t.string   "delivery",    limit: 255
     t.string   "observacion", limit: 255
-    t.datetime "created_at",                             null: false
-    t.datetime "updated_at",                             null: false
-    t.string   "menu1",       limit: 255
+    t.integer  "usuario_id",  limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
   end
 
   create_table "promocions", force: :cascade do |t|
@@ -133,6 +142,33 @@ ActiveRecord::Schema.define(version: 20150608045347) do
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
   end
+
+  create_table "uploads", force: :cascade do |t|
+    t.integer  "creator_id",          limit: 4
+    t.string   "name",                limit: 255
+    t.string   "caption",             limit: 1000
+    t.text     "description",         limit: 65535
+    t.boolean  "is_public",           limit: 1,     default: true
+    t.integer  "uploadable_id",       limit: 4
+    t.string   "uploadable_type",     limit: 255
+    t.string   "width",               limit: 255
+    t.string   "height",              limit: 255
+    t.string   "local_file_name",     limit: 255
+    t.string   "local_content_type",  limit: 255
+    t.integer  "local_file_size",     limit: 4
+    t.datetime "local_updated_at"
+    t.string   "remote_file_name",    limit: 255
+    t.string   "remote_content_type", limit: 255
+    t.integer  "remote_file_size",    limit: 4
+    t.datetime "remote_updated_at"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "uploads", ["creator_id"], name: "index_uploads_on_creator_id", using: :btree
+  add_index "uploads", ["local_content_type"], name: "index_uploads_on_local_content_type", using: :btree
+  add_index "uploads", ["uploadable_id"], name: "index_uploads_on_uploadable_id", using: :btree
+  add_index "uploads", ["uploadable_type"], name: "index_uploads_on_uploadable_type", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -147,6 +183,14 @@ ActiveRecord::Schema.define(version: 20150608045347) do
     t.string   "last_sign_in_ip",        limit: 255
     t.datetime "created_at",                                      null: false
     t.datetime "updated_at",                                      null: false
+    t.string   "username",               limit: 255
+    t.string   "lastname",               limit: 255
+    t.string   "fechadenacimiento",      limit: 255
+    t.string   "dni",                    limit: 255
+    t.string   "direccion",              limit: 255
+    t.string   "distrito",               limit: 255
+    t.string   "telefono",               limit: 255
+    t.string   "diredeli",               limit: 255
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree

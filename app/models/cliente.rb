@@ -17,5 +17,5 @@
 #  updated_at :datetime         not null
 #
 
-class Cliente < ActiveRecord::Base
+class User < ActiveRecord::Base
 end
