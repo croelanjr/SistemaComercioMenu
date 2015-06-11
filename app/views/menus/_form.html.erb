@@ -16,12 +16,12 @@
     <%= f.text_field :codigo %>
   </div>
   <div class="field">
-    <%= f.label :Nombre_de_Menú %><br>
+    <%= f.label :Nombre_de_Comida %><br>
     <%= f.text_field :nombre_menu %>
   </div>
   <div class="field">
-    <%= f.label :Tipo_de_Menu %><br>
-    <%= f.text_field :tipo_menu %>
+    <%= f.label :Tipo_de_Comida %><br>
+    <%= f.text_field :tipo_menu, collection: ["Entrada", "Sopa", "Segundo", "Carta"] %>
   </div>
   <div class="actions">
     <%= f.submit %>
