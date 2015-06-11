@@ -24,21 +24,19 @@
     </ul>
 </nav>
 <body>
+<div class="container">
 <p id="notice"><%= notice %></p>
-<p>
-  <strong>Nombre:</strong>
-  <%= @promocion.nombre %>
-</p>
-<p>
-  <strong>Descripcion:</strong>
-  <%= @promocion.descripcion %>
-</p>
-<p>
-  <strong>Picture:</strong>
-  <%= image_tag(@promocion.imagen_url, :width => 500) if @promocion.imagen.present? %>
-</p>
+<dl class="dl-horizontal">
+<dt><strong>Nombre:</strong></dt>
+<dd><%= @promocion.nombre %></dd>
+<dt><strong>Descripción:</strong></dt>
+<dd><%= @promocion.descripcion %></dd>
+<dt><strong>Picture:</strong></dt>
+<dd><%= image_tag(@promocion.imagen_url, :width => 500) if @promocion.imagen.present? %></dd>
+</dl>
 
-<%= link_to 'Edit', edit_promocion_path(@promocion) %> |
-<%= link_to 'Back', promocions_path %>
+<p class="btn btn-info btn-block"><%= link_to 'Editar', edit_promocion_path(@promocion) %></p>
+<p class="btn btn-info btn-block"><%= link_to 'Regresar', promocions_path %></p>
+</div>
 </body>
 </html>

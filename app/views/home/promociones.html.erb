@@ -7,7 +7,7 @@
 	<title><%= @empresa.name %></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 	<div clas="titulo">
-		<h1><%= @titulo %></h1>
+		<h1><%= @empresa.name %></h1>
 	</div>
 </head>
 <nav>
@@ -21,10 +21,13 @@
     </ul>
 </nav>
 <body>
+<div class="container">
+<h1 class="log1">Nuestras Promociones</h1>
     <% @promocions.each do |promocion| %>
-        <p><%= promocion.nombre %></td>
+        <h2><%= promocion.nombre %></h2>
 		<p><%= image_tag(promocion.imagen_url, :width => 400) if promocion.imagen.present? %></p>
-        <p><%= promocion.descripcion %></td>
+        <p><%= promocion.descripcion %></p>
     <% end %>
+</div>
 </body>
 </html>

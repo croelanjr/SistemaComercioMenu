@@ -7,7 +7,7 @@
 	<title><%= @empresa.name %></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 	<div clas="titulo">
-		<h1><%= @titulo %></h1>
+		<h1><%= @empresa.name %></h1>
 	</div>
 </head>
 <nav>
@@ -21,9 +21,11 @@
     </ul>
 </nav>
 <body>
+<div class="container">
+<h1 class="log1">Nuestros Locales</h1>
 <% @locals.each do |local| %>
 <p>
-  <strong>Nombre:</strong>
+  <strong>Local:</strong>
   <%= local.nombre %>
 </p>
 
@@ -42,5 +44,7 @@
   <%= local.telefono %>
 </p>
 <% end %>
+</div>
+
 </body>
 </html>

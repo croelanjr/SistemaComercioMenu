@@ -24,11 +24,13 @@
     </ul>
 </nav>
 <body>
-<h1>Editing Promocion</h1>
+<div class="container">
+<h1>Modificar Promociones</h1>
 
 <%= render 'form' %>
 
-<%= link_to 'Show', @promocion %> |
-<%= link_to 'Back', promocions_path %>
+<p class="btn btn-info btn-block"><%= link_to 'Visualizar', @promocion %></p>
+<p class="btn btn-info btn-block"><%= link_to 'Regresar', promocions_path %></p>
+</div>
 </body>
 </html>
