@@ -7,7 +7,7 @@
 	<title><%= @empresa.name %></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 	<div clas="titulo">
-		<h1><%= @titulo %></h1>
+		<h1><%= @empresa.name %></h1>
 	</div>
 </head>
 <nav>
@@ -21,7 +21,8 @@
     </ul>
 </nav>
 <body>
-<p class="contacto">Consultas / Reclamos / Contactos</p>
+<div class="container">
+<h1 class="log1">Consultas / Reclamos / Contactos</h1>
 
 <%= form_tag("") do %>
     <div class="field" id="cont">
@@ -57,6 +58,10 @@
     <div class="field" id="cont">
     <%= submit_tag "Enviar" %>
     </div>
+</div>
 <% end %>
+      <footer id="footer">
+        <p>&copy; <%= @empresa.name %> 2015</p>
+      </footer>
 </body>
 </html>

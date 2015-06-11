@@ -21,6 +21,21 @@
     </ul>
 </nav>
 <body>
-	
+<div class="container">
+<p class="notice"><%= notice %></p>
+<p class="alert"><%= alert %></p>
+	<p class="logo"><%= image_tag @empresa.logo, :width => 500 %></p>
+    <div class="imagen1">
+    <a href=<%= home_menus_path %>><img src="comida.png" width=150 height=150></a>
+    <a href=<%= home_promociones_path %>><img src="promocion.png" width=150 height=150></a>
+    <a href=<%= home_locales_path %>><img src="local1.png" width=150 height=150></a><br />
+    <a href=<%= home_contactenos_path %>><img src="contacto.png" width=150 height=150></a>
+    <a href=<%= home_about_path %>><img src="about.png" width=150 height=150></a>
+	</div>
+</div>
+
+      <footer id="footer">
+        <p>&copy; <%= @empresa.name %> 2015</p>
+      </footer>
 </body>
 </html>

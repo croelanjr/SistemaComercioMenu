@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
   #post 'home/menus', to: 'vista_pedido#new'
 
-  get 'home/menus', to: 'vista_pedido#index'
+  get 'home/menus', to: 'vista_pedido#new'
 
   #post 'home/menus', to: 'vista_pedido#nuevo'
 

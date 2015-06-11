@@ -24,10 +24,13 @@
 <div class="container">
 <h1 class="log1">Nuestras Promociones</h1>
     <% @promocions.each do |promocion| %>
-        <h2><%= promocion.nombre %></h2>
-		<p><%= image_tag(promocion.imagen_url, :width => 400) if promocion.imagen.present? %></p>
-        <p><%= promocion.descripcion %></p>
+        <h2 class="promo1"><%= promocion.nombre %></h2>
+		<p class="promo2"><%= image_tag(promocion.imagen_url, :width => 400) if promocion.imagen.present? %></p>
+        <p class="promo3"><%= promocion.descripcion %></p>
     <% end %>
 </div>
+      <footer id="footer">
+        <p>&copy; <%= @empresa.name %> 2015</p>
+      </footer>
 </body>
 </html>

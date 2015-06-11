@@ -7,7 +7,7 @@
 	<title><%= @empresa.name %></title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
 	<div class="titulo">
-		<h1><%= @titulo %></h1>
+		<h1><%= @empresa.name %></h1>
 	</div>
 </head>
 <nav>
@@ -21,11 +21,13 @@
     </ul>
 </nav>
 <body>
-	<p class="titul">Acerca de Nosotros</p>
+<div class="container">
+	<h1 class="log1">Acerca de Nosotros</h1>
 	<p class="abou"><%= @empresa.about_1 %></p>
 	<p class="abou"><%= @empresa.about_2 %></p>
       <footer id="footer">
         <p>&copy; <%= @empresa.name %> 2015</p>
       </footer>
+</div>
 </body>
 </html>
