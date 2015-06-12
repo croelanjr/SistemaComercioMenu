@@ -1,4 +1,4 @@
-<%= simple_form_for(@pedidoo) do |f| %>
+<%= simple_form_for @pedidoo, :url => url_for(:action => 'create', :controller => 'vista_pedido'), :method => 'post' do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">

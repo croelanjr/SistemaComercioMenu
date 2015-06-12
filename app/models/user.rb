@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   #attr_accessible :user
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
-  has_many :pedidos
-  validates :username, presence: true 
+  #belongs_to :usuario
+  #has_many :pedido
+  #validates :name, presence: true 
 end

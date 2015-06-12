@@ -68,13 +68,13 @@ def new
 	end
 
 	def create
-        @usuario = User.find(params[:user_id])
-        @pedido = @usuario.pedido.create(pedido_params)
-        #@pedidoo = Pedido.new(params[:pedidoo])
-      if @pedido.save
+        #@usuario = User.find(params[:usuario])
+        #@pedidoo = @usuario.pedido.create(pedido_params)
+        @pedidoo = Pedido.new(params[:pedidoo])
+      if @pedidoo.save
 		    flash[:notice] = "Menu generado con exito"
         #redirect_to @pedidoo
-        redirect_to @usuario
+        redirect_to root_path
       else
       	render :new
       end
@@ -110,13 +110,12 @@ def new
 
   private
     def set_pedido
-      #@pedido = Pedido.find(params[:id])
-      @pedido = @usuario.pedido.find 
+      @pedidoo = Pedido.find(params[:id])
+      #@pedido = @usuario.pedido.find 
     end
 
     def pedido_params
-      params.permit(:user_id).merge(bidder: current_user)
-      #params.require(:pedido).permit(:numero, :fecha, :nombre, :dni, :telefono, :email, :local, :menu, :cantidad, :precio, :delivery_id, :observacion)
+      #params.permit(:user_id).merge(bidder: current_user)
+      params.require(:pedidoo).permit(:numero, :fecha, :nombre, :dni, :telefono, :email, :local, :menu, :cantidad, :precio, :delivery, :observacion, :usuario)
     end
 end
-https://github.com/croelanjr/SistemaComercioMenu.git
