@@ -21,17 +21,13 @@
     </ul>
 </nav>
 <body>
-<div class="container">
-<h1 class="log1">Consulta/Reclamo/Información</h1>
-
-<%= render 'form' %>
-
-<div class="botoncentro">
-<%= link_to 'Regresar', root_path, :class => "btn btn-primary" %>
-</div>
-</div>
-      <footer id="footer">
-        <p>&copy; <%= @empresa.name %> 2015</p>
-      </footer>
+  <div>
+    <% flash.each do |key, value| %>
+  <div>
+  <a href="#" data-dismiss="alert"></a>
+    <%= value %>
+  </div>
+  <% end %>
+  </div>
 </body>
 </html>

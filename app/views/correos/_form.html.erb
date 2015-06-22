@@ -1,14 +1,14 @@
-<%= simple_form_for(@correo) do |f| %>
+<%= simple_form_for @correo, :html => {:class => 'form-horizontal' } do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :nombre %>
-    <%= f.input :email %>
-    <%= f.input :asunto %>
-    <%= f.input :mensaje %>
+    <%= f.input :nombre, :required => true %>
+    <%= f.input :email, :required => true %>
+    <%= f.input :asunto, :required => true, collection: ["Información", "Consulta", "Reclamo"] %>
+    <%= f.input :mensaje, :as => :text, :required => true %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit %>
+    <%= f.button :submit, 'Enviar mensaje', :class => "btn btn-primary" %>
   </div>
 <% end %>

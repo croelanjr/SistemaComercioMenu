@@ -22,9 +22,12 @@ Rails.application.routes.draw do
 
   #get 'home/contactenos', to: 'correos#new'
 
-  get 'home/contactenos'
+  #get 'home/contactenos'
 
-  post 'home/contactenos'
+  #post 'home/contactenos'
+
+  match 'home/contactenos', to: "correos#new", via: 'get'
+  resources :correos, only: [:new, :create]
 
   get 'home/about'
   
@@ -33,6 +36,8 @@ Rails.application.routes.draw do
   get 'admini/menus'
 
   get 'admini/clientes', to: 'clientes#index'
+
+  post 'admini/clientes', to: 'clientes#index'
 
   get 'admini/administradores', to: 'usuarios#index'
 
@@ -54,7 +59,7 @@ Rails.application.routes.draw do
 
   resources :locals
 
-  resources :correos
+  #resources :correos
 
   resources :empresas
 

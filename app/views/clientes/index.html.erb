@@ -24,6 +24,7 @@
     </ul>
 </nav>
 <body>
+<div class="container">
 <p id="notice"><%= notice %></p>
 <h1>Listado de Clientes</h1>
 <table>
@@ -47,7 +48,7 @@
         <td><%= cliente.distrito %></td>
         <td><%= cliente.telefono %></td>
         <td><%= link_to 'Visualizar', cliente_path(cliente) %></td>
-        <td><%= link_to 'Editar', edit_user_registration_path %></td>
+        <td><%= link_to 'Editar', edit_cliente_path(cliente) %></td>
         <td><%= link_to 'Eliminar', cliente_path(cliente), method: :delete, data: { confirm: 'Estas Seguro que desea Eliminar?' } %></td>
       </tr>
     <% end %>
@@ -57,5 +58,6 @@
 <br>
 
 <%= link_to 'Nuevo Cliente', new_cliente_path %>
+</div>
 </body>
 </html>

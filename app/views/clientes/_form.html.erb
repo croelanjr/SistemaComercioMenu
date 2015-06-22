@@ -1,4 +1,4 @@
-<%= form_for(@cliente) do |f| %>
+<%= simple_form_for @cliente, :url => url_for(:controller => 'clientes'), :method => 'post' do |f| %>
   <% if @cliente.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@cliente.errors.count, "error") %> prohibited this cliente from being saved:</h2>
@@ -11,47 +11,19 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :Código %><br>
-    <%= f.text_field :codigo_dni %>
-  </div>
-  <div class="field">
-    <%= f.label :Nombres %><br>
-    <%= f.text_field :nombre %>
-  </div>
-  <div class="field">
-    <%= f.label :Apellidos %><br>
-    <%= f.text_field :apellido, :cols =>60 %>
-  </div>
-  <div class="field">
-    <%= f.label :Fecha_de_Nacimiento %><br>
-    <%= f.date_select :fecha_naci, start_year:1940, last_year:2015 %>
-  </div>
-  <div class="field">
-    <%= f.label :Dirección %><br>
-    <%= f.text_field :direccion %>
-  </div>
-  <div class="field">
-    <%= f.label :Distrito %><br>
-    <%= f.text_field :distrito %>
-  </div>
-  <div class="field">
-    <%= f.label :Clave %><br>
-    <%= f.text_field :clave %>
-  </div>
-  <div class="field">
-    <%= f.label :Dirección_de_Delivery %><br>
-    <%= f.text_field :delivery %>
-  </div>
-  <div class="field">
-    <%= f.label :Teléfono %><br>
-    <%= f.text_field :telefono %>
-  </div>
-  <div class="field">
-    <%= f.label :Email %><br>
-    <%= f.text_field :email %>
+  <div class="form-inputs">
+    <%= f.input :dni, label: "D.N.I. Nro." %>
+    <%= f.input :username, label: "Nombres" %>
+    <%= f.input :lastname, :cols =>60, label: "Apellidos" %>
+    <%= f.date_select :fechadenacimiento, start_year:1940, last_year:2015, label: "Fecha de nacimiento" %>
+    <%= f.input :direccion, label: "Dirección" %>
+    <%= f.input :distrito, label: "Distrito" %>
+    <%= f.input :encrypted_password, label: "Contraseña" %>
+    <%= f.input :diredeli, label: "Dirección del Delivery" %>
+    <%= f.input :telefono, label: "Telefono" %>
+    <%= f.input :email, label: "Correo Electronico" %>
   </div>  
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.button :submit %>
   </div>
 <% end %>

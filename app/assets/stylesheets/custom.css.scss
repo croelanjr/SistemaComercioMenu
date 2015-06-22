@@ -22,6 +22,12 @@ p.log2 {
 	text-align: center;
 }
 
+/* Botones */
+div.botoncentro {
+	margin-top: -43px;
+	text-align: center;
+}
+
 h1.log2 {
 	margin-top : 80px;
 	text-align: center;
@@ -82,4 +88,36 @@ p.log3 {
 	margin-top: 5px;
 	margin-bottom: 5px;
 	margin-left: 200px;
+}
+
+.hidden { display: none; }
+
+/*flash*/
+
+.alert-error {
+background-color: #f2dede;
+border-color: #eed3d7;
+color: #b94a48;
+text-align: left;
+}
+
+.alert-alert {
+background-color: #f2dede;
+border-color: #eed3d7;
+color: #b94a48;
+text-align: left;
+}
+
+.alert-success {
+background-color: #dff0d8;
+border-color: #d6e9c6;
+color: #468847;
+text-align: left;
+}
+
+.alert-notice {
+background-color: #dff0d8;
+border-color: #d6e9c6;
+color: #468847;
+text-align: left;
 }

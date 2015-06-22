@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150611050546) do
+ActiveRecord::Schema.define(version: 20150620040052) do
 
   create_table "admis", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
@@ -185,7 +185,7 @@ ActiveRecord::Schema.define(version: 20150611050546) do
     t.datetime "updated_at",                                      null: false
     t.string   "username",               limit: 255
     t.string   "lastname",               limit: 255
-    t.string   "fechadenacimiento",      limit: 255
+    t.date     "fechadenacimiento"
     t.string   "dni",                    limit: 255
     t.string   "direccion",              limit: 255
     t.string   "distrito",               limit: 255

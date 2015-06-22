@@ -24,22 +24,23 @@
     </ul>
 </nav>
 <body>
+<<div class="container">
 <p id="notice"><%= notice %></p>
 <p>
   <strong>Codigo (DNI):</strong>
-  <%= @cliente.codigo_dni %>
+  <%= @cliente.dni %>
 </p>
 <p>
   <strong>Nombre:</strong>
-  <%= @cliente.nombre %>
+  <%= @cliente.username %>
 </p>
 <p>
   <strong>Apellidos:</strong>
-  <%= @cliente.apellido %>
+  <%= @cliente.lastname %>
 </p>
 <p>
   <strong>Fecha Nacimiento:</strong>
-  <%= @cliente.fecha_naci %>
+  <%= @cliente.fechadenacimiento %>
 </p>
 <p>
   <strong>Dirección:</strong>
@@ -50,12 +51,8 @@
   <%= @cliente.distrito %>
 </p>
 <p>
-  <strong>Clave:</strong>
-  <%= @cliente.clave %>
-</p>
-<p>
   <strong>Dirección de Delivery:</strong>
-  <%= @cliente.delivery %>
+  <%= @cliente.diredeli %>
 </p>
 <p>
   <strong>Teléfono:</strong>
@@ -67,5 +64,6 @@
 </p>
 <%= link_to 'Editar', edit_cliente_path(@cliente) %> |
 <%= link_to 'Regresar', clientes_path %>
+</div>
 </body>
 </html>
